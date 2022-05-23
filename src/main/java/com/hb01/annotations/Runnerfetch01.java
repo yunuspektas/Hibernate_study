@@ -34,12 +34,13 @@ public class Runnerfetch01 {
 		
 		/*
 		 * //String sglQuery1 = "SELECT * FROM student01"; // native Query ile select
-		 * işlemi //listenin her elemanı bir kayıttır, her kayır kolonlardan oluştuıgu
-		 * için Object Array içindeki her bir element //bir kolon bilgisi tutar
-		 * //List<Object[]> resultList1 =
-		 * session.createSQLQuery(sglQuery1).getResultList(); //for (Object[] r :
-		 * resultList1) { // System.out.println(Arrays.toString(r)); //
-		 * System.out.println("--------"); // System.out.println(r[2]); //}
+		 * işlemi listenin her elemanı bir kayıttır, her kayıt kolonlardan oluştugu
+		 * için Object Array içindeki her bir element bir kolon bilgisi tutar
+		 * //List<Object[]> resultList1 = session.createSQLQuery(sglQuery1).getResultList(); 
+		 * // for (Object[] r :resultList1) { 
+		 * 		System.out.println(Arrays.toString(r)); 
+		 * 		System.out.println("--------");  
+		 * 		System.out.println(r[2]); }
 		 */		
 		
 		// Veri fetch etmek için 3.metod ---> HQL : Hybernate Query Language 
@@ -47,31 +48,34 @@ public class Runnerfetch01 {
 		// Bu örnekte Entity ismi Student01 olduğu için aşağıdaki sorguda bu şekildedir
 		/*
 		 * String hqlQuery1 = "FROM Student01"; // HQL de sorgularımızda artık class
-		 * kullanıyoruz. List<Student01> resultList2 =
-		 * session.createQuery(hqlQuery1).getResultList(); for ( Student01 student :
-		 * resultList2) { System.out.println(student); }
+		 * kullanıyoruz. 
+		 * List<Student01> resultList2 = session.createQuery(hqlQuery1).getResultList(); 
+		 * for ( Student01 student : resultList2) { 
+		 * 		System.out.println(student); 
+		 * }
 		 */
 		
 		
-		// SQl sorgu yani native query sorgu kullanmanın dezavantajı : mysql ve postgresql e has farklı syntax olabilir. 
+		// SQL sorgu yani native query sorgu kullanmanın dezavantajı : mysql ve postgresql e has farklı syntax olabilir. 
 		//burada kullanılan native query hataya sebeb olabilir, o yüzden olabildiğince 1. ve 3. metod kullanılmalı
 		
 		
-		// ismi John Coffee olan öğrenciis fetch edelim :
+		// ismi John Coffee olan öğrenciyi fetch edelim :
 		
 		// 1.yol: SQL ile
 		String sqlQuery2 = "SELECT * FROM student01 where name='John Coffee'";
 		/*
 		 * String sqlQuery2 = "SELECT * FROM student01 where name='John Coffee'";
 		 * List<Object []> resultList3 =
-		 * session.createSQLQuery(sqlQuery2).getResultList(); for (Object [] r :
-		 * resultList3) { System.out.println(Arrays.toString(r)); }
+		 * session.createSQLQuery(sqlQuery2).getResultList(); 
+		 * for (Object [] r :resultList3) { 
+		 * 		System.out.println(Arrays.toString(r)); 
+		 * }
 		 */
 		
 		// Eğer sorgu sonucu tek bir kayıt (unıque) döneceğinden eminsek 
 		/*
-		 * Object[] result1 = (Object[])
-		 * session.createSQLQuery(sqlQuery2).uniqueResult();
+		 * Object[] result1 = (Object[]) session.createSQLQuery(sqlQuery2).uniqueResult();
 		 * System.out.println(Arrays.toString(result1));
 		 */
 		

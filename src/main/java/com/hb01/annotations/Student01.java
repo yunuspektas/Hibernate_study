@@ -14,7 +14,7 @@ public class Student01 {
 	@Id    // bu annotation altındaki değişkeni primary key yapar, bu annotation her entity sınıfında olmalı
 	private int id ;
 	
-	//@Column(name="student_name") ---> eger tablodaki kolon ismini değişken isminden fatklı bir isim olarak oluşturmak istersek
+	//@Column(name="student_name") ---> eger tablodaki kolon ismini değişken isminden farklı bir isim olarak oluşturmak istersek
 	@Column
 	private String name ;
 	

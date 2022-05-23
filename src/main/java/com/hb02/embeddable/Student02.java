@@ -17,7 +17,7 @@ public class Student02 {
 	@Column
 	private int grade;
 	
-	private Course02 courses ;
+	private Course02 courses ;   // Course02 yi embedable olacağını belirtmek için burada obje oluşturuyoruz.
 
 
 	public Course02 getCourses() {
