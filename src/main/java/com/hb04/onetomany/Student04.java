@@ -9,7 +9,10 @@ public class Student04 {
 	
 	@Id
 	private int id;
-	@Column(name ="std_name") // bunu yazsanda yazmasanda kolon gerçekleşir
+	//length : max karakter sayısını
+	//nullable  : ilgili kolonun mutlaka null olup olmayacagını belirler
+	@Column(name = "std_name", length = 100, nullable = false, unique = true) // bunu yazsanda yazmasanda kolon
+																				// gerçekleşir
 	private String name;
 
 }
