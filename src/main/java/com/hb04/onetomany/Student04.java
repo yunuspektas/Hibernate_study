@@ -24,7 +24,8 @@ public class Student04 {
 
 	private int grade;
 
-	@OneToMany
+	@OneToMany(mappedBy = "student") // bir öğrenciye bir çok kitaba sahip olabileceği için OneToMany ilişkişi kuruldu
+	
 	private List<Book04> bookList = new ArrayList<>();  // one to many ilişkisi için yazıldı. bir öğrencinin birden fazala kitabı olabilir.
 
 	public int getId() {
