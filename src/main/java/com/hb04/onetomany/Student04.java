@@ -11,6 +11,8 @@ public class Student04 {
 	private int id;
 	//length : max karakter sayısını
 	//nullable  : ilgili kolonun mutlaka null olup olmayacagını belirler
+	//updatable : update edilebilir. mesela ilk create eden kişinin isminin değişmesini istemiyebiliriz
+	//insertable : 
 	@Column(name = "std_name", length = 100, nullable = false, unique = true) // bunu yazsanda yazmasanda kolon
 																				// gerçekleşir
 	private String name;
