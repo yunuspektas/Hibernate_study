@@ -26,30 +26,28 @@ public class RunnerSave01 {
 		
 		
 		
-		
+		// hibernate için oluşturduğumuz configuration sınıfını okumamız lazım, 
+		//devamında Entity annotation ile işaretlediğim sınıfı ekliyorum
 		Configuration con = new Configuration().configure("hibernate.cfg.xml").
 				addAnnotatedClass(Student01.class);
 		
-		
+		// veritabanında connection açma için Sesion oluşturuyorum
 		SessionFactory sf = con.buildSessionFactory();
 		Session session = sf.openSession();
-		
+//		veri göndermek için transction objesine ihtiyac var
 		Transaction tx = session.beginTransaction();
-		
+	
 		session.save(student1);
 		session.save(student2);
 		session.save(student3);
-		
+//		
 		tx.commit(); // veri tabanına bu öğrenci bilgisinin yazılmasını sağlıyor
+//		
 		
-		
-		
-		
-		
-		
-		
-		session.close();   // close edilmezse her istekde yeni bir connection açar. belli bir sayıda connection havuzu var.
-		//sonunda connection leak olkuşur ve veri tabanı ulaşılamaz olur.
+				
+		session.close();   // close edilmezse her istekde yeni bir connection açar. 
+		//	belli bir sayıda connection havuzu var.kapatılmadan kullanılırsa her open da 
+		//	bir connection açar ve sonunda connection leak oluşur ve veri tabanı ulaşılamaz olur.
 		sf.close();
 		
 		

@@ -12,6 +12,8 @@ public class Runnerfetch01 {
 
 	public static void main(String[] args) {
 		
+		// fetch işlemi sonrası database den gelecek Student objelerini kaydetmek için 
+		//Student tipinde değişken oluşturduk
 		Student01 student1 = new Student01();
 		
 		
@@ -24,31 +26,33 @@ public class Runnerfetch01 {
 		
 		Transaction tx = session.beginTransaction();
 		
-		//Veri fetch etmek için 1.metod : 
+		// ---> Veri fetch etmek için 1.metod : 
 		
-		//student1=session.get(Student01.class, 1001); // 2.parametreye primery key girilmesi gerekiyor
-		//System.out.println("------" + student1.getName()+ "--------");
+//		student1=session.get(Student01.class, 1001); // 2.parametreye primary key girilmesi gerekiyor
+//		System.out.println("------" + student1.getName()+ "--------");
 		//System.out.println(student1); // pojo daki string metodu çalışır
 		
-		//Veri fetch etmek için 2.metod : 
+		// ---> Veri fetch etmek için 2.metod : 
 		
 		/*
-		 * //String sglQuery1 = "SELECT * FROM student01"; // native Query ile select
-		 * işlemi listenin her elemanı bir kayıttır, her kayıt kolonlardan oluştugu
-		 * için Object Array içindeki her bir element bir kolon bilgisi tutar
-		 * //List<Object[]> resultList1 = session.createSQLQuery(sglQuery1).getResultList(); 
-		 * // for (Object[] r :resultList1) { 
+		 * String sglQuery1 = "SELECT * FROM student01"; // native Query ile select
+		 * // Listenin her bir elemanı bir kayıttır, her kayıt kolonlardan oluştugu
+		 * // için Object Array içindeki her bir element bir kolon bilgisi tutar
+		 * List<Object[]> resultList1 = session.createSQLQuery(sglQuery1).getResultList(); 
+		 *  for (Object[] r :resultList1) { 
 		 * 		System.out.println(Arrays.toString(r)); 
 		 * 		System.out.println("--------");  
-		 * 		System.out.println(r[2]); }
+		 * 		System.out.println(r[2]); }  // r[2] bize her kaydın ismini getirir.
 		 */		
 		
-		// Veri fetch etmek için 3.metod ---> HQL : Hybernate Query Language 
-		// HQL sorgularında FROM dan sonra Entity ismini kullanıyoruz.
-		// Bu örnekte Entity ismi Student01 olduğu için aşağıdaki sorguda bu şekildedir
-		/*
-		 * String hqlQuery1 = "FROM Student01"; // HQL de sorgularımızda artık class
-		 * kullanıyoruz. 
+		/*	// ---> Veri fetch etmek için 3.metod ---> 
+		 * 
+		 *  // HQL : Hybernate Query Language 
+		 *	// HQL sorgularında FROM dan sonra Entity ismini kullanıyoruz.
+		 *	// Bu örnekte Entity ismi Student01 olduğu için aşağıdaki sorguda bu şekildedir
+		 *
+		 *
+		 * String hqlQuery1 = "FROM Student01"; // HQL de sorgularımızda artık class  kullanıyoruz.
 		 * List<Student01> resultList2 = session.createQuery(hqlQuery1).getResultList(); 
 		 * for ( Student01 student : resultList2) { 
 		 * 		System.out.println(student); 
@@ -56,16 +60,17 @@ public class Runnerfetch01 {
 		 */
 		
 		
-		// SQL sorgu yani native query sorgu kullanmanın dezavantajı : mysql ve postgresql e has farklı syntax olabilir. 
-		//burada kullanılan native query hataya sebeb olabilir, o yüzden olabildiğince 1. ve 3. metod kullanılmalı
+		// SQL sorgu yani native query sorgu kullanmanın dezavantajı : performans olarak dah hızlı olsada 
+		// mysql ve postgresql e has farklı syntax olabilir. 
+		// burada kullanılan native query hataya sebeb olabilir, o yüzden olabildiğince 1. ve 3. metod kullanılmalı
 		
 		
-		// ismi John Coffee olan öğrenciyi fetch edelim :
+		// SORU01 : ismi John Coffee olan öğrenciyi fetch edelim :
 		
 		// 1.yol: SQL ile
 		String sqlQuery2 = "SELECT * FROM student01 where name='John Coffee'";
 		/*
-		 * String sqlQuery2 = "SELECT * FROM student01 where name='John Coffee'";
+		 * 
 		 * List<Object []> resultList3 =
 		 * session.createSQLQuery(sqlQuery2).getResultList(); 
 		 * for (Object [] r :resultList3) { 
@@ -73,24 +78,26 @@ public class Runnerfetch01 {
 		 * }
 		 */
 		
-		// Eğer sorgu sonucu tek bir kayıt (unıque) döneceğinden eminsek 
+		// Eğer sorgu sonucu tek bir kayıt (unıque) döneceğinden eminsek, List oluşturmaya gerek olmadığı için :
 		/*
 		 * Object[] result1 = (Object[]) session.createSQLQuery(sqlQuery2).uniqueResult();
 		 * System.out.println(Arrays.toString(result1));
 		 */
 		
 		// HQL ile unique result 
-//		String hqlQuery2 = "FROM Student01 s where s.name='John Coffee'"; // Student01'e s takma ismi verdim (alias kullanıldı)
+//		String hqlQuery2 = "FROM Student01 s where s.name='John Coffee'"; // Student01'e "s" takma ismi verdim (alias kullanıldı)
 //		Object result2 = session.createQuery(hqlQuery2).uniqueResult();
 //		System.out.println(result2);
 		
 		
-		// HQL ile notu 100 olan öğrencleri fetch edelim
+		// SORU02 :HQL ile notu 100 olan öğrencleri fetch edelim
 		
 		/*
-		 * String hqlQuery3 = "FROM Student01 s where s.grade=100"; List<Object>
-		 * resultList4 = session.createQuery(hqlQuery3).getResultList(); for (Object r :
-		 * resultList4) { System.out.println(r); }
+		 * String hqlQuery3 = "FROM Student01 s where s.grade=100"; 
+		 * List<Object> resultList4 = session.createQuery(hqlQuery3).getResultList(); 
+		 * for (Object r : resultList4) { 
+		 * 	System.out.println(r); 
+		 * }
 		 */
 		
 		// HQL ile notu 100 olan öğrenclerin adlarını fetch edelim

@@ -20,7 +20,7 @@ public class RunnerSave04 {
 		
 		
 		
-		tx.commit();
+		//tx.commit();
 		
 		
 		

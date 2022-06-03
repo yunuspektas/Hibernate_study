@@ -31,7 +31,7 @@ public static void main(String[] args) {
 	
 	
 	
-	tx.commit();
+	//tx.commit();
 	session.close();
 	sf.close();
 	

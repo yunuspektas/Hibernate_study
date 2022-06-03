@@ -4,19 +4,17 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
-import org.hibernate.annotations.Table;
-
 @Entity // veri tabanında bir tablo karşılığı oldugunu gösterir. 
-//@Entity(name="student01") ---> bu hem tablo ismini hem de sorgularda kullanacağınız entity ismi bu verilen isim olacaktır
-//@Table(name="tbl_student01") ---> bu anotation oluşturulacak tablonun ismini belirler.
+//@Entity(name="student01") ---> bu hem tablo ismini hem de sorgularda kullanacağınız "entity" ismi bu verilen isim olacaktır
+//@Table(name="tbl_student01") ---> bu anotation oluşturulacak class ismi aynı kalır ama tablonun ismini değiştirir.
 public class Student01 {
 	
-	@Id    // bu annotation altındaki değişkeni primary key yapar, bu annotation her entity sınıfında olmalı
+	@Id    // bu annotation altındaki değişkeni primary key yapar, bu annotation her entity sınıfında olmalı !!!
 	//(name="1") gibi atama yapılmasına izin vermez
 	private int id ;
 	
 	//@Column(name="student_name") ---> eger tablodaki kolon ismini değişken isminden farklı bir isim olarak oluşturmak istersek
-	@Column
+	@Column  // tabloya bir column ekledik
 	private String name ;
 	
 	
