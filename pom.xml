@@ -4,14 +4,18 @@
   <artifactId>hb</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   
+<!--      properties kısmına kullancagımız bağımlılıkların versiyon bilgilerini giriyoruz, mesela burada -->
+<!--      JAVA 11'i kullanacağımızı belirtmiş olduk. -->
      <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
     </properties>
     
+<!--     bağımlılıkları dependencies e ekliyoruz. mavenin ( maven repository) kendi deposundan bulup ekleme yapıyoruz -->
     <dependencies>
     
-    
+<!--     bağımlılık olarak hibernate ve mysql ekledik sadece -->
+
       	<dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>

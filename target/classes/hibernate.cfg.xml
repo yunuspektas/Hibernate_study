@@ -9,9 +9,11 @@
 		Bir süre sonra tamamen çıkarılacağını gösteren annotasyon
 		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property> -->
 		<property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+<!-- 		test.db benim mysql workbench de oluşturduğum database ismi oluyor, kullanıcı adı ve şifre de aynı şekilde.. -->
 		<property name="connection.url">jdbc:mysql://localhost:3306/test_db</property>
 		<property name="connection.username">root</property>
 		<property name="connection.password">123456</property>
+<!-- 		hibernat in MySQL ile bağlantısını sağlıyan kısım -->
 		<property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
 
 
