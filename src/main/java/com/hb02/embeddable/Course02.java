@@ -6,6 +6,10 @@ import javax.persistence.Embeddable;
 //				ama Student02 ile aynı tabloda tutmak istediğimi belirtiyorum, 
 public class Course02 {
 	
+	private String elective;
+	private String mandatory;
+	
+	
 	public String getElective() {
 		return elective;
 	}
@@ -18,8 +22,6 @@ public class Course02 {
 	public void setMandatory(String mandatory) {
 		this.mandatory = mandatory;
 	}
-	private String elective;
-	private String mandatory;
 	
 	
 	@Override

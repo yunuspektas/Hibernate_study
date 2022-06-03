@@ -23,6 +23,7 @@ public class RunnerFetch02 {
 		
 		
 		
+		
 		tx.commit();
 		session.close();
 		sf.close();
