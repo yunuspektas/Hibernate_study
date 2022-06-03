@@ -12,6 +12,7 @@ import org.hibernate.annotations.Table;
 public class Student01 {
 	
 	@Id    // bu annotation altındaki değişkeni primary key yapar, bu annotation her entity sınıfında olmalı
+	//(name="1") gibi atama yapılmasına izin vermez
 	private int id ;
 	
 	//@Column(name="student_name") ---> eger tablodaki kolon ismini değişken isminden farklı bir isim olarak oluşturmak istersek

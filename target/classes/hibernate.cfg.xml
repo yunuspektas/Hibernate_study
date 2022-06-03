@@ -8,26 +8,30 @@
 		<!-- @Deprecated 
 		Bir süre sonra tamamen çıkarılacağını gösteren annotasyon
 		<property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property> -->
+<!-- 		mysql in sürücüsü  -->
 		<property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
 <!-- 		test.db benim mysql workbench de oluşturduğum database ismi oluyor, kullanıcı adı ve şifre de aynı şekilde.. -->
 		<property name="connection.url">jdbc:mysql://localhost:3306/test_db</property>
 		<property name="connection.username">root</property>
 		<property name="connection.password">123456</property>
-<!-- 		hibernat in MySQL ile bağlantısını sağlıyan kısım -->
+<!-- 		hibernate in MySQL ile bağlantısını sağlıyan dialect kısmı, 
+		burada postGresQL kullanacaksak postgreSQL in dialectini yazıyoruz -->
 		<property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
 
 
+<!-- 		hbm2ddl.auto kısmı veritabanındaki tabloların nasıl oluşturulacagını belirliyor, burada 4 seçenek var :-->
 		<!-- validate, update, create, create-drop -->
-		<!-- create: uygulama her çalıştıgında tablolar yeniden oluşur, database 
-			her seferinde sıfırlanır, development aşamasında kullanıulır genelde -->
-		<!-- create-derop : uygulama her run edildiğinde tablolar oluşur, uygulama 
+		<!-- * create: uygulama her çalıştıgında tablolar yeniden oluşur, uygulama her çalıştığında database 
+			her seferinde sıfırlanır, development aşamasında kullanılır genelde -->
+		<!-- * create-drop : uygulama her run edildiğinde tablolar oluşur, uygulama 
 			kapatıldıgında tablolar silinir -->
-		<!-- validate : veritabanında bir değişiklik yapmaz, şemanın validate mi 
-			diye kontrol eder. -->
-		<!-- update : sınıflarda yapılan değişikliğe göretabloları update eder. -->
-		<property name="hbm2ddl.auto">update</property>
-		<!-- uygulama run edildiğinde çalıştıgını konsolda gösterir -->
+		<!-- * validate : veritabanında bir değişiklik yapmaz, şemanın validate mi 
+			diye kontrol eder. tablonun önceden oluşturuldugu gibi mi duruyor onu kontrol eder -->
+		<!-- * update : sınıflarda yapılan değişikliğe göre tabloları update eder. Uygulama canlıya geçince kalabilir-->
+		<property name="hbm2ddl.auto">create</property>
+		<!-- uygulama run edildiğinde SQL sorularının çalıştıgını konsolda gösterir -->
 		<property name="show_sql">true</property>
+<!-- 		oluşturulan sorguyu tek satırda değilde formatlı güzel şekilde gösterilmesini sağlar -->
 		<property name="format_sql">true</property>
 
 
