@@ -27,6 +27,7 @@ public class RunnerFetch02 {
 		session.close();
 		sf.close();
 		
+		// veritabanından fetch edilen objeyi student1 değişkenine kaydettiğimiz için session close da olsa kullanabiliyoruz
 		System.out.println(student1);
 
 	}

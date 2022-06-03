@@ -100,13 +100,15 @@ public class Runnerfetch01 {
 		 * }
 		 */
 		
-		// HQL ile notu 100 olan öğrenclerin adlarını fetch edelim
+		// SORU03 : HQL ile notu 100 olan öğrenclerin adlarını fetch edelim
 		
-		String hqlQuery4 = "SELECT s.name FROM Student01 s where s.grade=100";
-		List<Object> resultList5 = session.createQuery(hqlQuery4).getResultList();
-		for (Object r : resultList5) {
-			System.out.println(r);
-		}
+//		String hqlQuery4 = "SELECT s.name FROM Student01 s where s.grade=100";
+//		List<Object> resultList5 = session.createQuery(hqlQuery4).getResultList();
+//		for (Object r : resultList5) {
+//			System.out.println(r);
+//		}
+		
+	
 		
 		
 		

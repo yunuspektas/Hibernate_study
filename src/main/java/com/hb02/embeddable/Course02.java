@@ -2,7 +2,8 @@ package com.hb02.embeddable;
 
 import javax.persistence.Embeddable;
 
-@Embeddable    // alttaki değişkenleri ayrı sınıfda ama aynı tabloda tutmak istediğimi belirtiyorum, 
+@Embeddable    // bu annotatşon ile b uannotationun sahip oldugu instance veriableları ayrı sınıfda 
+//				ama Student02 ile aynı tabloda tutmak istediğimi belirtiyorum, 
 public class Course02 {
 	
 	public String getElective() {
