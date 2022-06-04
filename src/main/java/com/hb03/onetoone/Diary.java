@@ -14,7 +14,8 @@ public class Diary {
 	private String name;
 
 	@OneToOne
-	@JoinColumn(name = "std_id") // hangi tabloda foreign key varsa bunu yazmam gerekiyor
+	@JoinColumn(name = "std_id") // hangi tabloda foreign key varsa bunu yazmam gerekiyor, name properties kullanılmasa idi, 
+	//								Diary tablosunda student_id adında otomatik foreign key colomn oluşurdu
 	private Student03 student;
 
 	public int getId() {

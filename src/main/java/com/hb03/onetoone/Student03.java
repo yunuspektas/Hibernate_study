@@ -12,11 +12,11 @@ public class Student03 {
 	@Id
 	private int id;
 
-	@Column(name = "std_name") // bu annotation mecburi değildir fakat custoım bir kolon ismi vermek istenirse
-								// ozaman mecburidir
+	@Column(name = "std_name") // bu annotation mecburi değildir fakat custom bir kolon ismi vermek istenirse
+								// kullanılabilir
 	private String name;
 
-	//@Transient -->  bu annotation koydugumuz değişken tabloda bir kolon olarak oluşmaz
+	//@Transient -->  bu annotation koydugumuz değişken, tabloda bir kolon olarak oluşmaz
 	private int grade;
 
 	@OneToOne(mappedBy = "student")
