@@ -18,7 +18,7 @@ public class Student04 {
 	// updatable : update edilebilir. mesela ilk create eden kişinin isminin
 	// değişmesini istemiyebiliriz
 	// insertable : insert edilebilir
-	@Column(name = "std_name", length = 100, nullable = false, unique = true) // bunu yazsanda yazmasanda kolon
+	@Column(name = "std_name", length = 100, nullable = false, unique = true) // @Column yazsanda yazmasanda kolon
 																				// gerçekleşir
 	private String name;
 
@@ -26,7 +26,11 @@ public class Student04 {
 
 	@OneToMany(mappedBy = "student") // bir öğrenciye bir çok kitaba sahip olabileceği için OneToMany ilişkişi kuruldu
 	
-	private List<Book04> bookList = new ArrayList<>();  // one to many ilişkisi için yazıldı. bir öğrencinin birden fazala kitabı olabilir.
+	private List<Book04> bookList = new ArrayList<>();  // one to many ilişkisi için yazıldı. 
+	//														bir öğrencinin birden fazala kitabı olabilir.
+	
+	
+	 
 
 	public int getId() {
 		return id;

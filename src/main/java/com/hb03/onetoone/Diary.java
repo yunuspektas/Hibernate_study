@@ -14,7 +14,7 @@ public class Diary {
 	private String name;
 
 	@OneToOne
-	@JoinColumn(name = "std_id") // hangi tabloda foreign key varsa bunu yazmam gerekiyor, name properties kullanılmasa idi, 
+	@JoinColumn//(name = "std_id") // opsiyoneldir , bu annotation ile foreign key sütunun adını değiştirdik, name properties kullanılmasa idi, 
 	//								Diary tablosunda student_id adında otomatik foreign key colomn oluşurdu
 	private Student03 student;
 

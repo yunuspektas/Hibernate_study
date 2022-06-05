@@ -17,6 +17,8 @@ public class Book04 {
 	@JoinColumn(name = "student_id")
 	private Student04 student;
 
+		
+	
 	public int getId() {
 		return id;
 	}

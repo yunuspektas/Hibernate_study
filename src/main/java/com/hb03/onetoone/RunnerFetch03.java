@@ -30,7 +30,8 @@ public class RunnerFetch03 {
 		 * student1 = session.get(Student03.class, 1001);
 		 * System.out.println(student1.getDiary());
 		 * 
-		 * diary1 = session.get(Diary.class, 101); System.out.println(diary1);
+		 * diary1 = session.get(Diary.class, 101); 
+		 * System.out.println(diary1);
 		 */
 //  ****************************
 //		String hqlQuery1 = "select s.name,d.name,s.grade from Student03 s inner join fetch Diary d on s.id=d.student";
@@ -76,7 +77,7 @@ public class RunnerFetch03 {
 		
 		
 
-		tx.commit();
+		tx.commit(); // fetch işlemlerinde commit e gerek yok ama konulması hibernate dökümantasyonlarında tavsiye ediliyor
 
 		session.close();
 		sf.close();
