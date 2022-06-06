@@ -14,7 +14,7 @@ public class Book04 {
 	private String name;
 	
 	@ManyToOne    // bir çok kitab bir öğrenciye ait olabileceği için manyToOne ilişkişi kuruldu
-	@JoinColumn(name = "student_id")
+	@JoinColumn(name = "student_id") // ilişkinin sahibi book, çünki J
 	private Student04 student;
 
 		
@@ -42,12 +42,17 @@ public class Book04 {
 	public void setStudent(Student04 student) {
 		this.student = student;
 	}
-
+	
 	@Override
 	public String toString() {
-		return "Book04 [id=" + id + ", name=" + name + ", student=" + student + "]";
+		return "Book04 [id=" + id + ", name=" + name + "]";
 	}
-	
+
+//	@Override
+//	public String toString() {
+//		return "Book04 [id=" + id + ", name=" + name + ", student=" + student + "]";
+//	}
+//	
 	
 
 }

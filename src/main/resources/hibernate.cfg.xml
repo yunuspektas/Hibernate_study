@@ -28,7 +28,7 @@
 		<!-- * validate : veritabanında bir değişiklik yapmaz, şemanın validate mi 
 			diye kontrol eder. tablonun önceden oluşturuldugu gibi mi duruyor onu kontrol eder -->
 		<!-- * update : sınıflarda yapılan değişikliğe göre tabloları update eder. Uygulama canlıya geçince kalabilir-->
-		<property name="hbm2ddl.auto">create</property>
+		<property name="hbm2ddl.auto">update</property>
 		<!-- uygulama run edildiğinde SQL sorularının çalıştıgını konsolda gösterir -->
 		<property name="show_sql">true</property>
 <!-- 		oluşturulan sorguyu tek satırda değilde formatlı güzel şekilde gösterilmesini sağlar -->

@@ -48,7 +48,8 @@ public class RunnerSave04 {
 		
 		student1.getBookList().add(book1);
 		student1.getBookList().add(book2);
-		student1.getBookList().add(book4);  // **************
+		student1.getBookList().add(book4);  // book tarafında book4.setStudent() fonksiyonu 
+		//									set edilmediği için tabloda student1 öğrencisine book4 set edilmeyecek
 		
 		student2.getBookList().add(book3);
 		
