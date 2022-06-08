@@ -91,6 +91,7 @@ public class RunnerFetch04 {
 //		System.out.println("Effected row count : " + numOfRec2);
 		
 		// ----> id si verilen bir öğrenci kaydını HQL ile silme
+		
 		// Eğer silinmek istenen öğrencinin bir kitabı var ise
 		// Yani Book tablosundaki student_id kolonunda bu öğrenci id ile ilgili bir kayıt var ise
 		//student_id kolonu foreign key olduğu için student silme işlemi yapılamıyacaktır.
@@ -103,6 +104,12 @@ public class RunnerFetch04 {
 		
 //		book1= session.get(Book04.class, 103);
 //		session.delete(book1);
+		
+		// DİKKAT : kitabı olan bir öğrenciyi silmek problemli: silmek istersek önce bağlı olduğu 
+		//kitap silinir daha sonrailgili öğrenci silinebilir, bunu aşmaın yolu orphanRemoval propertise ı 
+		//true olarak set etmek , Student04.java da 28. satırda yapılıyor 
+		
+		// her book un studentını setStudent metodu ile set etmek istemiyorsam @  annotationını eklerim
 		
 		
 		

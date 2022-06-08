@@ -47,9 +47,13 @@ public class RunnerSave04 {
 		book4.setName("No body's book");
 		
 		student1.getBookList().add(book1);
+		// student1.getBookList().set(0,null) ---> bu komut ile student1 objesinin bir üstteki book1 ile bağlantısını kaldırmış olduk
+		// student1 in 1.kitabına null atadığımız için student1 in 1.kitabı boşa düşüyor ve orphan.remove olduğu zman boşa düşen kitabı da tablodan da silinir.
+		// ancak oprhan.remove değilde cascadeType.remove olsaydı bağlantıyı koparır ama 1.kitab kaydını silmez.
 		student1.getBookList().add(book2);
 		student1.getBookList().add(book4);  // book tarafında book4.setStudent() fonksiyonu 
-		//									set edilmediği için tabloda student1 öğrencisine book4 set edilmeyecek
+		//									set edilmediği için tabloda student1 öğrencisine book4 set edilmeyecek ancak 
+		//									her seferinde set etmek istemiyorsam "CascadeType.ALL" kullanmam gerekir
 		
 		student2.getBookList().add(book3);
 		
@@ -66,13 +70,15 @@ public class RunnerSave04 {
 		
 		session.save(student1);
 		session.save(student2);
-		session.save(student3);
+
+
+		// cascadeType.ALL  yapıldığı için aşağıdaki book sınıflarını kaydetmek için 
+		// kod yazmaya gerek kalmadı, bunu hibernate otomatik olarak kendisi yapıyor
 		
-		session.save(book1);
-		session.save(book2);
-		session.save(book3);
-		session.save(book4);
-		
+//		session.save(book1);   
+//		session.save(book2);
+//		session.save(book3);
+//		session.save(book4);
 		
 		tx.commit();
 		

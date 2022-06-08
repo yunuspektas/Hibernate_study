@@ -3,6 +3,7 @@ package com.hb04.onetomany;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -24,9 +25,15 @@ public class Student04 {
 
 	private int grade;
 
-	@OneToMany(mappedBy = "student") // bir öğrenciye bir çok kitaba sahip olabileceği için OneToMany ilişkişi kuruldu
-	
+	@OneToMany(mappedBy = "student", orphanRemoval=true, cascade= CascadeType.ALL) // --->  bir öğrenciye bir çok kitaba sahip olabileceği için 
+	//	OneToMany ilişkişi kuruldu
+	//  ---> her book un studentını setStudent metodu ile set etmek istemiyorsam CascadeType.ALL eklerim. 
+	//  Cascade yapabilmek için RunnerSave04 sınıfındaki 36, 40 ve 44. satırları commente aldım.
+	// CascadeType.Remove  --->  parent nesneyi silrsem ona bağlı olan bütün childlarda silinir.
+	// CascadeType.Persist --->  parent objem kaydedildiği zaman diğer childlarda UYGULANIR
+	// orphanRemoval=true  --->  foreign key de olsa ilgili row u silmemizi sağlıyor
 	private List<Book04> bookList = new ArrayList<>();  // one to many ilişkisi için yazıldı. 
+	
 	//														bir öğrencinin birden fazala kitabı olabilir.
 	
 	
