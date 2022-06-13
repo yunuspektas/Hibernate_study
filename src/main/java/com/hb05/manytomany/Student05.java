@@ -64,11 +64,11 @@ public class Student05 {
 		return "Student05 [id=" + id + ", name=" + name + ", grade=" + grade + "]";
 	}
 
-	private List<Book05> getBooks() {
+	public List<Book05> getBooks() {
 		return books;
 	}
 
-	private void setBooks(List<Book05> books) {
+	public void setBooks(List<Book05> books) {
 		this.books = books;
 	}
 	

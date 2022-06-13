@@ -16,8 +16,8 @@ public class Book05 {
 	private String name;
 	
 	
-	@ManyToMany(mappedBy = "books")  // mappedBy genelde parent tarafına yazılıyordu ama burada ilişkinin 
-	//										sahibi olmadığı için 2 tarafa da yazılabilir
+	@ManyToMany(mappedBy = "books")   // mappedBy genelde parent tarafına yazılıyordu ama burada ilişkinin 
+									 //  sahibi olmadığı için 2 tarafa da yazılabilir
 	
 	private List<Student05> students = new ArrayList<>();
 	
