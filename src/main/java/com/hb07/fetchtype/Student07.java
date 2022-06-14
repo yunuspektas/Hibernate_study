@@ -5,11 +5,15 @@ import java.util.List;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 
 
+
+@Entity
 public class Student07 {
 	@Id
 	private int id;
@@ -19,7 +23,7 @@ public class Student07 {
 
 	private int grade;
 
-	@OneToMany(mappedBy = "student", cascade= CascadeType.ALL) 
+	@OneToMany(mappedBy = "student", cascade= CascadeType.ALL, fetch= FetchType.LAZY) 
 	private List<Book07> bookList = new ArrayList<>();  
 	
 	
@@ -55,11 +59,16 @@ public class Student07 {
 	public void setBookList(List<Book07> bookList) {
 		this.bookList = bookList;
 	}
-
+	
 	@Override
 	public String toString() {
-		return "Student07 [id=" + id + ", name=" + name + ", grade=" + grade + ", bookList=" + bookList + "]";
+		return "Student07 [id=" + id + ", name=" + name + ", grade=" + grade + " ]";
 	}
-	
+
+//	@Override
+//	public String toString() {
+//		return "Student07 [id=" + id + ", name=" + name + ", grade=" + grade + ", bookList=" + bookList + "]";
+//	}
+//	
 
 }

@@ -1,53 +1,79 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>com.hb</groupId>
-  <artifactId>hb</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  
-<!--      properties kısmına kullancagımız bağımlılıkların versiyon bilgilerini giriyoruz, mesela burada -->
-<!--      JAVA 11'i kullanacağımızı belirtmiş olduk. -->
-     <properties>
-        <maven.compiler.source>11</maven.compiler.source>
-        <maven.compiler.target>11</maven.compiler.target>
-    </properties>
-    
-<!--     bağımlılıkları dependencies e ekliyoruz. mavenin ( maven repository) kendi deposundan bulup ekleme yapıyoruz -->
-    <dependencies>
-    
-<!--     bağımlılık olarak hibernate ve mysql ekledik sadece -->
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.hb</groupId>
+	<artifactId>hb</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
 
-      	<dependency>
-            <groupId>org.hibernate</groupId>
-            <artifactId>hibernate-core</artifactId>
-            <version>5.6.8.Final</version>
-      	</dependency>
-      	
-    <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+	<!-- properties kısmına kullancagımız bağımlılıkların versiyon bilgilerini 
+		giriyoruz, mesela burada -->
+	<!-- JAVA 11'i kullanacağımızı belirtmiş olduk. -->
+	<properties>
+		<maven.compiler.source>11</maven.compiler.source>
+		<maven.compiler.target>11</maven.compiler.target>
+		<hibernate.version>5.6.8.Final</hibernate.version>
+		<mysql.connector.version>8.0.27</mysql.connector.version>
+		<ehcache.version>3.10.0</ehcache.version>
+		<hibernate.jcache.version>6.1.0.Final</hibernate.jcache.version>
+	</properties>
+
+	<!-- bağımlılıkları dependencies e ekliyoruz. mavenin ( maven repository) 
+		kendi deposundan bulup ekleme yapıyoruz -->
+	<dependencies>
+
+		<!-- bağımlılık olarak hibernate ve mysql ekledik sadece -->
+
 		<dependency>
-    		<groupId>mysql</groupId>
-    		<artifactId>mysql-connector-java</artifactId>
-    		<version>8.0.27</version>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-core</artifactId>
+			<version>${hibernate.version}</version>  <!-- properties kısmına versiyon bilgisi eklendi -->
 		</dependency>
-    
-    
-    
-    
-    
-    
-    
-    </dependencies>
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
+
+		<!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>${mysql.connector.version}</version>
+		</dependency>
+		
+		<!-- hibernate SecondLevelCache için gerekli -->
+		<!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-jcache -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-jcache</artifactId>
+			<version>${hibernate.jcache.version}</version>
+			<type>pom</type>
+		</dependency>
+		<!-- hibernate SecondLevelCache için gerekli -->
+		<!-- https://mvnrepository.com/artifact/org.ehcache/ehcache -->  
+		<dependency>
+			<groupId>org.ehcache</groupId>
+			<artifactId>ehcache</artifactId>
+			<version>${ehcache.version}</version>
+		</dependency>
+
+
+
+
+
+
+
+
+
+	</dependencies>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </project>

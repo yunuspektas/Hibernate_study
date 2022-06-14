@@ -60,7 +60,7 @@ public class RunnerSave07 {
 		
 		session.save(student1);
 		session.save(student2);
-		session.save(book1);
+		session.save(student3);
 
 
 

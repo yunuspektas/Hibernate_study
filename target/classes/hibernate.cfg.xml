@@ -38,6 +38,11 @@
 		<!-- day03 deki mapping işlemleri için gerekli( oneToOne ) -->
 		<mapping class="com.hb03.onetoone.Student03" />
 		<mapping class="com.hb03.onetoone.Diary" />
+		
+		<!-- alt satırda second level cache aktif ediliyor -->
+		<property name ="hibernate.cache.use_second_Level_cache">true</property>
+		<!-- alt satırda ilgili dependency içinden sınıf ismini aldık kullanacagımız region factory için -->
+		<property name="hibernate.cache.region.factory_class">org.hibernate.cache.jcache.internal.JCacheRegionFactory</property>
 
 
 
